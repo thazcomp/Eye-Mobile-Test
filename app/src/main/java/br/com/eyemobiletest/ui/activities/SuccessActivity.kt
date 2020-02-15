@@ -3,6 +3,7 @@ package br.com.eyemobiletest.ui.activities
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.widget.ScrollView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -43,5 +44,7 @@ class SuccessActivity : AppCompatActivity(){
             Toast.makeText(this, "Pagamento realizado com sucesso.", Toast.LENGTH_SHORT).show()
             ContextCompat.startActivity(this, Intent(this, MainActivity::class.java), null)
         }
+
+        scroll.fullScroll(ScrollView.FOCUS_UP)
     }
 }

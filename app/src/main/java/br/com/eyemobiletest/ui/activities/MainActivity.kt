@@ -4,6 +4,7 @@ import android.graphics.Bitmap
 import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.widget.ScrollView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.drawable.toBitmap
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         initValueArray()
         adapter = PayMethodAdapter(methods,this)
         initRecycler()
-
+        scroll.fullScroll(ScrollView.FOCUS_UP)
         setListeners()
     }
 
