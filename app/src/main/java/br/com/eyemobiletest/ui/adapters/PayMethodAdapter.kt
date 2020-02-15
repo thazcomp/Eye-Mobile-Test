@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
@@ -28,10 +29,18 @@ class PayMethodAdapter(private val methods: ArrayList<PayMethod>,
                 title.text = m.title
                 icon.setImageBitmap(m.icon)
                 icon.setOnClickListener{
-                    val options:Bundle = Bundle()
-                    options.putString("value", textValue)
-                    options.putString("type", m.title)
-                    startActivity(context, Intent(context, SuccessActivity::class.java), options)
+                    textValue?.let{
+                        if(it != "R$ 00,00"){
+                            val intent = Intent(context, SuccessActivity::class.java)
+                            intent.putExtra("value", textValue)
+                            intent.putExtra("type", m.title)
+                            startActivity(context, intent, null)
+                        }else{
+                            Toast.makeText(context, "Por favor, ensira um valor.", Toast.LENGTH_SHORT).show()
+                        }
+                    }?:run {
+                        Toast.makeText(context, "Por favor, ensira um valor.", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
         }

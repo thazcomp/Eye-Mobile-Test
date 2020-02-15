@@ -20,12 +20,9 @@ class SuccessActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_success)
 
-        val options = intent.extras
+        tv_value.text = intent.getStringExtra("value")
+        tv_type.text = intent.getStringExtra("type")
 
-        options?.let{
-            tv_value.text = options.getString("value")
-            tv_type.text = options.getString("type")
-        }
         var output: String? = null
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
              val localDateTime: LocalDateTime = LocalDateTime.now()
