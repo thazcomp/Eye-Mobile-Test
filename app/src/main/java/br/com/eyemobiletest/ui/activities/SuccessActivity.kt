@@ -23,16 +23,15 @@ class SuccessActivity : AppCompatActivity(){
         tv_value.text = intent.getStringExtra("value")
         tv_type.text = intent.getStringExtra("type")
 
-        var output: String? = null
+        val output: String?
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
              val localDateTime: LocalDateTime = LocalDateTime.now()
-             val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss")
+             val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")
              output = formatter.format(localDateTime)
         } else {
              val currentTime:Date = Calendar.getInstance().getTime()
-             val parser = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
-             val formatter = SimpleDateFormat("dd.MM.yyyy HH:mm:ss")
-             output = formatter.format(parser.parse(currentTime.toString())!!)
+             val formatter = SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault())
+             output = formatter.format(currentTime.toString())
         }
         tv_date.text = output
 
