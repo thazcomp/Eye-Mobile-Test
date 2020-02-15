@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Eye Mobile Test</string>
+    <string name="total_a_pagar">Total a pagar</string>
+    <string name="r_0_00">R$ 0,00</string>
+    <string name="r_00_00">R$ 00,00</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="zero">0</string>
+    <string name="erase_button">⌫</string>
+    <string name="dinheiro">Dinheiro</string>
+    <string name="debito">Débito</string>
+    <string name="credito">Crédito</string>
+    <string name="vr">VR</string>
+    <string name="cupom">Cupom</string>
+    <string name="eyemobile_tecnologia_ltda">Eyemobile Tecnologia LTDA.</string>
+    <string name="rua_airton_roberto_de_oliveira_n_mero_64">Rua Airton Roberto de Oliveira\nNúmero 64</string>
+    <string name="r_30_00">R$ 30,00</string>
+    <string name="_15_02_2020_14_00_00">15/02/2020 14:00:00</string>
+    <string name="confirmar">Confirmar</string>
+</resources>
